@@ -2,6 +2,9 @@ body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   background-color:#f4f4f4;
   color: #333;
+  margin: 0;
+  padding-top: 100px;
+  scroll-behavior: smooth;
 }
 
 /* Navigation Bar */
@@ -14,6 +17,7 @@ body {
   background-color: transparent; /* Transparent background by default */
   z-index: 1000; /* Ensures navbar stays on top of other content */
   padding: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease; /* Smooth transition for background color */
 }
 
@@ -23,7 +27,12 @@ body {
 
 #home {
   background-color:#7600bc;
-  padding-bottom: 1cm;
+  padding: 30px;
+  color: #fff;
+  text-align: center;
+  background-image: url('');
+  background-size: cover;
+  background-position: center;
   margin-left:-1cm;
   margin-right:-1cm;
   margin-top:-1cm;
@@ -49,10 +58,18 @@ body {
   background-color: rgba(255, 255, 255, 0.2);;
 }
 
+/* Padding for sections */
+section {
+  padding-top: 100px; 
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 50px;
+}
+
 /* Add some padding to sections below the navbar */
 #about-me, #skills, #experience, #certification, #contact {
   padding: 100px 20px; /* Extra padding for content to not be hidden under the fixed navbar */
-  margin: 20px 0;
+  margin-top: 10px;
   background-color: #fff;
   border-radius: 8px;
 }
@@ -65,7 +82,8 @@ body {
 }
 
 .profile_name {
-  font-size: 1.5em;
+  font-size:
+   1.5em;
   font-weight: bold;
   float: left;
   padding-left: 2cm;
@@ -130,31 +148,65 @@ h2 {
   display: flex;
 }
 
-/* About Me */
-
-.about-me {
+/* About Me Section */
+#about-me {
   display: flex;
   align-items: center;
+  justify-content: center;
+  padding: 50px;
+  background-color: #f9f9f9;
+}
+.text-container {
+  max-width: 600px;
+  animation: slideIn 1s ease-out;
 }
 
 #about-me h1 {
-  font-size: 65px;
-  margin-top: 90px;
+  font-size: 2.5rem;
   color: #7600bc;
+  margin-bottom: 20px;
+  animation: fadeInUp 1s ease-out;
 }
 
 #about-me p {
-  font-size: 25px;
-  color: rgb(128, 128, 128);
-  margin-top: -1cm;
+  font-size: 1.125rem;
+  color: #808080;
+  line-height: 1.6;
+  animation: fadeInUp 1.2s ease-out;
 }
 
-.profile_image {
-  width: 550px;
-  height: fit-content;
-  vertical-align: middle;
-  margin: 5px;
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 
 /* Skills */
 
@@ -172,7 +224,7 @@ h2 {
   margin: 50px;
   padding: 10px;
   width: 2in;
-  font-size: 20px;
+  font-size: 20px;  
   box-shadow: 0 3px 10px gray;
 }
 
